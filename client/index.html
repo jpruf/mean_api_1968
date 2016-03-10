@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app='app1968'>
+<head>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+	<script src="./script.js"></script>
+</head>
+<body ng-controller='pcontroller'>
+	<h1>People born in 1968<hr></h1>
+	<p>Add people born in 1968</p>
+	<form>
+		<input type='text' ng-model='newperson.name'>
+		<button ng-click='addperson()'>Submit</button>
+	</form>
+	<table>
+		<tr><th>Name</th><th>Action</th></tr>
+		<tr ng-repeat='person in people track by $index'><td>{{person.name}}</td><td ng-click="removeperson(person)"><u>Delete</u></td></tr>
+	</table>
+</body>
+</html>
